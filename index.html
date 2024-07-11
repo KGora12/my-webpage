@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Kacper Góra</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: black;
+            background: url('tatry.webp') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            font-size: 16px; /* Powiększenie czcionki dla całego dokumentu */
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            margin: 20px auto;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 1300px;
+        }
+        .navbar {
+            background-color: green !important;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .navbar-brand, .navbar-nav .nav-link {
+            color: white !important;
+        }
+        .navbar-nav .nav-link {
+            padding: 10px;
+        }
+        .navbar-nav .nav-link:hover {
+            background-color: rgba(0, 100, 0, 0.7);
+        }
+        .language-switcher {
+            display: flex;
+            justify-content: flex-end;
+        }
+        .language-switcher img {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        .content {
+            display: none;
+        }
+        .content.active {
+            display: block;
+        }
+        img.profile {
+            float: right;
+            width: 120px;
+            height: auto;
+            border-radius: 15%;
+            margin: 35px 20px 0px 0px;
+        }
+        h1, h2, h3 {
+            font-size: 1.5em; /* Powiększenie nagłówków */
+        }
+        p, li {
+            font-size: 1.2em; /* Powiększenie paragrafów i elementów listy */
+        }
+        .work_img {
+            width: 100%;
+            max-width: 800px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 10px;
+        }
+
+        .logo_edu {
+            width: 150px; /* Zmień rozmiar obrazu tutaj */
+            margin-left: 10px;
+            height: 150px;
+        }
+        .logo_edu, #edu1desc, #edu2desc {
+            display: flex;
+        } 
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .contact-button {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            border: 2px solid #ccc;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+        .contact-button:hover {
+            background-color: #f0f0f0;
+            border-color: #888;
+        }
+        .contact-button img {
+            width: 70%;
+            height: 70%;
+        }
+        .profile-alternative {
+            max-width: 0px;
+        }
+        @media (max-width: 600px) {
+            .profile {
+            max-width: 0px;
+            }
+            .profile-alternative {
+            max-width: 100px;
+            border-radius: 15%;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="#" id="nav-brand">Curriculum vitae</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav home nav-link" href="#" onclick="showSection('profile')" id="nav-profile">Profil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav home nav-link" href="#" onclick="showSection('experience')" id="nav-experience">Doświadczenie</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav home nav-link" href="#" onclick="showSection('education')" id="nav-education">Edukacja</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav home nav-link" href="#" onclick="showSection('skills')" id="nav-skills">Umiejętności</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav home nav-link" href="#" onclick="showSection('contact')" id="nav-contact">Kontakt</a>
+                    </li>
+                </ul>
+                <div class="language-switcher">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/1/12/Flag_of_Poland.svg" alt="Polski" onclick="switchLanguage('pl')">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg" alt="English" onclick="switchLanguage('en')">
+                </div>
+            </div>
+        </nav>
+        <div id="profile" class="content active">
+            <div class="profile-container">
+            <img src="img.jpg" alt="Profile Photo" class="profile">
+            <div class="profile-info">
+            <h2><b>Kacper Góra</b></h2>
+            <p id="profile-text"><strong>Data urodzenia:</strong> 17.11.2002</p>
+            <p id="email-text"><strong>Adres e-mail:</strong> <a href="mailto:kacper.gora1289@gmail.com">kacper.gora1289@gmail.com</a></p>
+            <p id="address-text"><strong>Adres:</strong> Malinówka 18a, 21-070</p>
+            <p id="status-text"><strong>Status:</strong> Student</p>
+            <img src="img.jpg" alt="Profile Photo" class="profile-alternative">
+            <hr>
+            <p id="about-text">Jestem studentem Akademii Górniczo-Hutniczej na kierunku Cyberbezpieczeństwo. Poszukuję pracy wakacyjnej, jestem dyspozycyjny do 25 września 2024 roku.</p>
+        </div>
+    </div>
+            <hr>
+            
+            <section>
+                <h3 id="sectioneducation"><b>Wykształcenie</b></h3>
+                <h4 id="uni-text">Studia - Akademia Górniczo-Hutnicza [ od 09/2022 ]</h4>
+                <h5 id="uni-field-text">Kierunek: Cyberbezpieczeństwo</h5>
+                <h4 id="school-text">Szkoła średnia - Zespół Szkół Elektronicznych w Lublinie (ZSEL) [ 09/2018 – 04/2022 ]</h4>
+                <h5 id="school-field-text">Kierunek: Technik Teleinformatyk</h5>
+            </section>
+            <section>
+                <h3 id="sectioncert"><b>Certyfikaty i uprawnienia</b></h3>
+                <ul>
+                    <li id="cert-1">Prawo jazdy kat. B - Wojewódzki Ośrodek Ruchu Drogowego w Lublinie</li>
+                    <li id="cert-2">EE.10 Montaż, uruchamianie oraz utrzymywanie urządzeń i sieci teleinformatycznych - Zespół Szkół Elektronicznych w Lublinie (ZSEL)</li>
+                    <li id="cert-3">EE.11 Administrowanie sieciowymi systemami operacyjnymi i sieciami komputerowymi - Zespół Szkół Elektronicznych w Lublinie (ZSEL)</li>
+                    <li id="cert-4">CCNA Routing and Switching: Introduction to Networks - Cisco Networking Academy</li>
+                    <li id="cert-5">CCNA Routing and Switching: Routing and Switching Essentials - Cisco Networking Academy</li>
+                    <li id="cert-6">CCNA Routing and Switching: Scaling Networks - Cisco Networking Academy</li>
+                    <li id="cert-7">CCNA Routing and Switching: Connecting Networks - Cisco Networking Academy</li>
+                </ul>
+            </section>
+            <section>
+                <h3 id="sectionskills"><b>Umiejętności</b></h3>
+                <ul>
+                    <li id="skill-1">Programiwanie urządzeń sieciowych</li>
+                    <li id="skill-2">Spawanie światłowodów, pomiary reflektometrem OTDR</li>
+                    <li id="skill-3">Programowanie w językach: Python, C, JavaScript, HTML, CSS, Bash, SQL</li>
+                    <li id="skill-4">Znajomość środowiska systemowego Windows/Windows Server/Linux</li>
+                </ul>
+            </section>
+            <section>
+                <h3 id="sectionlang"><b>Znajomość języków</b></h3>
+                <ul>
+                    <li id="lang-1">Polski - Poziom: ojczysty</li>
+                    <li id="lang-2">Angielski - Poziom: B1</li>
+                    <li id="lang-3">Rosyjski - Poziom: A2</li>
+                </ul>
+            </section>
+        </div>
+        <div id="experience" class="content">
+            <h2 id="experience-heading">Doświadczenie</h2>
+            <ul>
+                <li id="exp1"><b>Praca letnia w firmie Nicols [08.2022]</b></li>
+                <p id="exp1desc">Praca letnia w firmie Nicols polegała na obsłudze urządzeń związanych z produkcją środków czystości.</p>
+                
+                <img src="nicols.webp" alt="Nicols_work" class="work_img">
+
+                <li id="exp2"><b>Praca dorywcza w firmie Investrate [06.2021 - 04.2022]</b></li>
+                <p id="exp2desc">Praca dorywcza polegała na wykonywaniu projektów napowietrznych sieci światłowodowych w programie AutoCad.</p>
+                
+                <img src="investrade.webp" alt="Investrade_work" class="work_img">
+
+                <li id="exp3"><b>Praktyki w Gminie Cyców [11.2021]</b></li>
+                <p id="exp3desc">Zgodnie z ciągiem nauczania w szkole technicznej odbyłem miesięczne praktyki. Podczas praktyk byłem pomocnikiem przy montowaniu kamer zewnętrznych oraz okablowania strukturalnego w Szkole Podstawowej w Malinówce.</p>
+            
+                <img src="internship.webp" alt="Internship" class="work_img">
+            </ul>
+        </div>
+        <div id="education" class="content">
+            <h2 id="education-heading">Edukacja</h2>
+            <ul>
+                <li id="edu1"><b>Studia - Akademia Górniczo-Hutnicza, kierunek: Cyberbezpieczeństwo [ od 09/2022 ]</b></li>
+                <p id="edu1desc">Studia na Akademii Górniczo-Hutniczej rozpocząłem w 2022 roku, tytuł inżyniera planuję obronić w 2026 roku.
+                    Dzięki studiom poszerzyłem wiedzę w zakresie informatyki, programowania, kryptografii, bezpieczeństwa informacji, fizyki oraz matematyki.
+                    Jako specjalista ds. Cyberbezpieczeństwa będę dążył do implementowania bezpiecznych rozwiązań w systemach informatycznych 
+                    oraz uświadamiania współpracujących ze mną osób, jak ważne jest bezpieczeństwo w dzisiejszym cyfrowym świecie. 
+                    <img src="agh.png" alt="AGH" class="logo_edu"> 
+                </p>
+                
+
+                <li id="edu2"><b>Szkoła średnia - Zespół Szkół Elektronicznych w Lublinie (ZSEL), kierunek: Technik Teleinformatyk [ 09/2018 – 04/2022 ]</b></li>
+                <p id="edu2desc">Podczas nauki w szkole średniej uzyskałem dwa certyfikaty (EE.10 oraz EE.11), co umożliwiło mi uzyskanie tytułu Technika Teleinformatyka. Dodatkowo uczęszczałem na kurs Akademii CISCO "CCNA Routing and Switching", 
+                który poszerzył moją wiedzę na temat urządzeń firmy CISCO, konfiguracji oraz podstawowych informacji o protokołach stosowanych w sieciach komputerowych.
+                Ukończyłem szkołę średnią z maturą oraz brałem udział w olimpiadzie "Euroelektra", gdzie zdobyłem tytuł finalisty, co umożliwiło mi bezproblemowy dostęp na studia.
+                <img src="zsel.png" alt="ZSEL" class="logo_edu">
+                </p>
+            </ul>
+
+        </div>
+        <div id="skills" class="content">
+            <h2 id="skills-heading">Umiejętności</h2>
+            <ul class="skills-list">
+                <li id="skill1"><b>Programowanie urządzeń sieciowych</b></li>
+                <p id="skills-text1">Dzięki kursom CCNA Routing and Switching, zapoznałem się z konfiguracją urządzeń 
+                    sieciowych firmy CISCO w sieciach lokalnych, jak i rozległych: protokoły routingu (RIP, OSPF, EIGRP, routing statyczny), 
+                    segmentacja sieci (VLAN, router na patyku), tunelowanie, bezpieczeństwo w sieciach lokalnych (port security, access listy).
+                    Potrafię również konfigurować urządzenia firmy TP-LINK.</p>
+                
+                <li id="skill2"><b>Spawanie światłowodów, pomiary reflektometrem OTDR</b></li>
+                <p id="skills-text2">Podczas nauki w Technikum Elektronicznym zapoznałem się z procedurą spawania światłowodów, 
+                    pomiarem tłumienności metodą transmisyjną oraz pomiarem reflektometrem. <a href="https://github.com/KGora12/CV/blob/main/OTDR.pdf" target="_blank" >Przykładowa analiza reflektogramów</a>.</p>
+                
+                <li id="skill3"><b>Programowanie w językach: Python, C, JavaScript, HTML, CSS, Bash, SQL</b></li>
+                <p id="skills-text3">Umiem programować w następujących językach: Python (proste programy, uczenie maszynowe), 
+                    C (programowanie sprzętowe, <a href="https://github.com/KGora12/CV/blob/main/ESP32.pdf" target="_blank">Przykładowy projekt na platformie ESP32</a>), JavaScript, HTML, CSS (strony internetowe),
+                    Bash (automatyzacja skryptowa), SQL (zarządzanie bazą danych, tworzenie serwera bazy danych, <a href="https://github.com/KGora12/CV/blob/main/BAZY.pdf" target="_blank" >Przykładowy projekt bazy danych</a>).</p>
+                
+                <li id="skill4"><b>Znajomość środowiska systemowego Windows/Windows Server/Linux</b></li>
+                <p id="skills-text4">Zarządzanie środowiskiem Windows/Windows Server: tworzenie domeny DNS oraz Active Directory, 
+                    nadawanie uprawnień w systemie Windows, zarządznie serwerem. Znajomość środowiska Linux.</p>
+            </ul>
+        </div>
+        <div id="contact" class="content">
+            <h2 id="contact-heading">Kontakt</h2>
+            <p id="contact-text1">Github: KGora12</p>
+            <p id="contact-text2">Email: kacper.gora1289@gmail.com</p>
+            <p id="contact-text3">Strona: https://kgora12.github.io/my-webpage/</p>
+            <div class="contact-buttons">
+                <a href="https://github.com/KGora12/CV/tree/main" target="_blank" class="contact-button">
+                    <img src="Github.svg" alt="GitHub">
+                </a>
+                <a href="mailto:kacper.gora1289@gmail.com" class="contact-button">
+                    <img src="mail.png" alt="Email">
+                </a>
+                <a href="https://kgora12.github.io/my-webpage/" target="_blank" class="contact-button">
+                    <img src="CV.png" alt="Website">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        const sections = document.querySelectorAll('.content');
+        const textContent = {
+            pl: {
+                profile: "<b>Data urodzenia:</b> 17.11.2002",
+                email: "<b>Adres e-mail:</b> <a href='mailto:kacper.gora1289@gmail.com'>kacper.gora1289@gmail.com</a>",
+                address: "<b>Adres:</b> Malinówka 18a, 21-070",
+                status: "<b>Status:</b> Student",
+                about: "Jestem studentem Akademii Górniczo-Hutniczej na kierunku Cyberbezpieczeństwo. Poszukuję pracy wakacyjnej, jestem dyspozycyjny do 25 września 2024 roku.",
+                uni: "Studia - Akademia Górniczo-Hutnicza [ od 09/2022 ]",
+                uniField: "Kierunek: Cyberbezpieczeństwo",
+                school: "Szkoła średnia - Zespół Szkół Elektronicznych w Lublinie (ZSEL) [ 09/2018 – 04/2022 ]",
+                schoolField: "Kierunek: Technik Teleinformatyk",
+                cert1: "Prawo jazdy kat. B - Wojewódzki Ośrodek Ruchu Drogowego w Lublinie",
+                cert2: "EE.10 Montaż, uruchamianie oraz utrzymywanie urządzeń i sieci teleinformatycznych - Zespół Szkół Elektronicznych w Lublinie (ZSEL)",
+                cert3: "EE.11 Administrowanie sieciowymi systemami operacyjnymi i sieciami komputerowymi - Zespół Szkół Elektronicznych w Lublinie (ZSEL)",
+                cert4: "CCNA Routing and Switching: Introduction to Networks - Cisco Networking Academy",
+                cert5: "CCNA Routing and Switching: Routing and Switching Essentials - Cisco Networking Academy",
+                cert6: "CCNA Routing and Switching: Scaling Networks - Cisco Networking Academy",
+                cert7: "CCNA Routing and Switching: Connecting Networks - Cisco Networking Academy",
+                skill1: "Programiwanie urządzeń sieciowych",
+                skill2: "Spawanie światłowodów, pomiary reflektometrem OTDR",
+                skill3: "Programowanie w językach: Python, C, JavaScript, HTML, CSS, Bash, SQL",
+                skill4: "Znajomość środowiska systemowego Windows/Windows Server/Linux",
+                lang1: "Polski - Poziom: ojczysty",
+                lang2: "Angielski - Poziom: B1",
+                lang3: "Rosyjski - Poziom: A2",
+                brand: "Curriculum vitae",
+                profileNav: "Profil",
+                experienceNav: "Doświadczenie",
+                educationNav: "Edukacja",
+                skillsNav: "Umiejętności",
+                contactNav: "Kontakt",
+                sectioneducation: "<b>Wykształcenie</b>",
+                sectioncert: "<b>Certyfikaty i uprawnienia</b>",
+                sectionskills: "<b>Umiejętności</b>",
+                sectionlang: "<b>Znajomość języków</b>",
+                exp1 : "<b>Praca letnia w firmie Nicols [08.2022]</b>",
+                exp2 : "<b>Praca dorywcza w firmie Investrate [06.2021 - 04.2022]</b>",
+                exp3 : "<b>Praktyki w Gminie Cyców [11.2021]</b>",
+                exp1desc : "Praca letnia w firmie Nicols polegała na obsłudze urządzeń związanych z produkcją środków czystości.",
+                exp2desc : "Praca dorywcza polegała na wykonywaniu projektów napowietrznych sieci światłowodowych w programie AutoCad.",
+                exp3desc : "Zgodnie z ciągiem nauczania w szkole technicznej odbyłem miesięczne praktyki. Podczas praktyk byłem pomocnikiem przy montowaniu kamer zewnętrznych oraz okablowania strukturalnego w Szkole Podstawowej w Malinówce.",
+                experienceheading: "Doświadczenie",
+                educationheading: "Edukacja",
+                edu1: "<b>Studia - Akademia Górniczo-Hutnicza, kierunek: Cyberbezpieczeństwo [ od 09/2022 ]</b>",
+                edu2: "<b>Szkoła średnia - Zespół Szkół Elektronicznych w Lublinie (ZSEL), kierunek: Technik Teleinformatyk [ 09/2018 – 04/2022 ]</b>",
+                edu1desc: "Studia na Akademii Górniczo-Hutniczej rozpocząłem w 2022 roku, tytuł inżyniera planuję obronić w 2026 roku. Dzięki studiom poszerzyłem wiedzę w zakresie informatyki, programowania, kryptografii, bezpieczeństwa informacji, fizyki oraz matematyki. Jako specjalista ds. Cyberbezpieczeństwa będę dążył do implementowania bezpiecznych rozwiązań w systemach informatycznych oraz uświadamiania współpracujących ze mną osób, jak ważne jest bezpieczeństwo w dzisiejszym cyfrowym świecie. <img src='agh.png' alt='AGH' class='logo_edu'> ",
+                edu2desc: "Podczas nauki w szkole średniej uzyskałem dwa certyfikaty (EE.10 oraz EE.11), co umożliwiło mi uzyskanie tytułu Technika Teleinformatyka. Dodatkowo uczęszczałem na kurs Akademii CISCO 'CCNA Routing and Switching', który poszerzył moją wiedzę na temat urządzeń firmy CISCO, konfiguracji oraz podstawowych informacji o protokołach stosowanych w sieciach komputerowych. Ukończyłem szkołę średnią z maturą oraz brałem udział w olimpiadzie 'Euroelektra', gdzie zdobyłem tytuł finalisty, co umożliwiło mi bezproblemowy dostęp na studia. <img src='zsel.png' alt='ZSEL' class='logo_edu'>",
+                skill1: "<b>Programowanie urządzeń sieciowych</b>",
+                skill2: "<b>Spawanie światłowodów, pomiary reflektometrem OTDR</b>",
+                skill3: "<b>Programowanie w językach: Python, C, JavaScript, HTML, CSS, Bash, SQL</b>",
+                skill4: "<b>Znajomość środowiska systemowego Windows/Windows Server/Linux</b>",
+                skillstext1: "Dzięki kursom CCNA Routing and Switching, zapoznałem się z konfiguracją urządzeń sieciowych firmy CISCO w sieciach lokalnych, jak i rozległych: protokoły routingu (RIP, OSPF, EIGRP, routing statyczny), segmentacja sieci (VLAN, router na patyku), tunelowanie, bezpieczeństwo w sieciach lokalnych (port security, access listy). Potrafię również konfigurować urządzenia firmy TP-LINK.",
+                skillstext2: "Podczas nauki w Technikum Elektronicznym zapoznałem się z procedurą spawania światłowodów, pomiarem tłumienności metodą transmisyjną oraz pomiarem reflektometrem. <a href='https://github.com/KGora12/CV/blob/main/OTDR.pdf'>Przykładowa analiza reflektogramów</a>.",
+                skillstext3: "Umiem programować w następujących językach: Python (proste programy, uczenie maszynowe), C (programowanie sprzętowe, <a href='https://github.com/KGora12/CV/blob/main/ESP32.pdf'>Przykładowy projekt na platformie ESP32</a>), JavaScript, HTML, CSS (strony internetowe), Bash (automatyzacja skryptowa), SQL (zarządzanie bazą danych, tworzenie serwera bazy danych, <a href='https://github.com/KGora12/CV/blob/main/BAZY.pdf'>Przykładowy projekt bazy danych</a>).",
+                skillstext4: "Zarządzanie środowiskiem Windows/Windows Server: tworzenie domeny DNS oraz Active Directory, nadawanie uprawnień w systemie Windows, zarządznie serwerem. Znajomość środowiska Linux.",
+                skillsheading: "Umiejętności",
+                contactheading: "Kontakt",
+                contacttext3: "Strona: https://kgora12.github.io/my-webpage/"
+
+
+
+
+            },
+            en: {
+                profile: "<b>Date of birth:</b> 17.11.2002",
+                email: "<b>Email:</b> <a href='mailto:kacper.gora1289@gmail.com'>kacper.gora1289@gmail.com</a>",
+                address: "<b>Address:</b> Malinówka 18a, 21-070",
+                status: "<b>Status:</b> Student",
+                about: "I am a student at AGH University of Crakow, specializing in Cybersecurity. I am looking for a summer job and am available until September 25, 2024.",
+                uni: "Studies - AGH University of Crakow [ since 09/2022 ]",
+                uniField: "Field: Cybersecurity",
+                school: "High school - Zespół Szkół Elektronicznych w Lublinie (ZSEL) [ 09/2018 – 04/2022 ]",
+                schoolField: "Field: Teleinformatics Technician",
+                cert1: "Driving license cat. B - Wojewódzki Ośrodek Ruchu Drogowego w Lublinie",
+                cert2: "EE.10 Montaż, uruchamianie oraz utrzymywanie urządzeń i sieci teleinformatycznych - Zespół Szkół Elektronicznych w Lublinie (ZSEL)",
+                cert3: "EE.11 Administrowanie sieciowymi systemami operacyjnymi i sieciami komputerowymi - Zespół Szkół Elektronicznych w Lublinie (ZSEL)",
+                cert4: "CCNA Routing and Switching: Introduction to Networks - Cisco Networking Academy",
+                cert5: "CCNA Routing and Switching: Routing and Switching Essentials - Cisco Networking Academy",
+                cert6: "CCNA Routing and Switching: Scaling Networks - Cisco Networking Academy",
+                cert7: "CCNA Routing and Switching: Connecting Networks - Cisco Networking Academy",
+                skill1: "Programming network devices",
+                skill2: "Optical fiber splicing, OTDR measurements",
+                skill3: "Programming languages: Python, C, JavaScript, HTML, CSS, Bash, SQL",
+                skill4: "Familiarity with Windows/Windows Server/Linux system environment",
+                lang1: "Polish - Level: native",
+                lang2: "English - Level: B1",
+                lang3: "Russian - Level: A2",
+                brand: "Curriculum vitae",
+                profileNav: "Profile",
+                experienceNav: "Experience",
+                educationNav: "Education",
+                skillsNav: "Skills",
+                contactNav: "Contact",
+                sectioneducation: "<b>Education</b>",
+                sectioncert: "<b>Certificates and licenses</b>",
+                sectionskills: "<b>Skills</b>",
+                sectionlang: "<b>Knowledge of languages</b>",
+                exp1: "<b>Summer job at Nicols [08.2022]</b>",
+                exp2: "<b>Part-time job at Investrate [06.2021 - 04.2022]</b>",
+                exp3: "<b>Internship at Gmina Cyców [11.2021]</b>",
+                exp1desc: "During my summer job at Nicols, I operated devices related to the production of cleaning agents.",
+                exp2desc: "In my part-time job at Investrate, I created overhead fiber optic network projects using AutoCAD.",
+                exp3desc: "As part of my technical school curriculum, I completed a one-month internship. During this internship, I assisted with the installation of external cameras and structured cabling at the Primary School in Malinówka.",
+                experienceheading: "Experience",
+                educationheading: "Education",
+                edu1: "<b>Studies - AGH University of Cracow, field: Cybersecurity [ since 09/2022 ]</b>",
+                edu2: "<b>High School - Zespół Szkół Elektronicznych w Lublinie (ZSEL), field: Teleinformatics Technician [ 09/2018 – 04/2022 ]</b>",
+                edu1desc: "I started my studies at AGH University of Science and Technology in 2022, aiming to obtain an engineering degree by 2026. Through my studies, I have expanded my knowledge in computer science, programming, cryptography, information security, physics, and mathematics. As a Cybersecurity specialist, I will strive to implement secure solutions in IT systems and raise awareness among my colleagues about the importance of cybersecurity in today's digital world. <img src='agh.png' alt='AGH' class='logo_edu'>",
+                edu2desc: "During my education at high school, I acquired two certificates (EE.10 and EE.11), which enabled me to obtain the title of Teleinformatics Technician. Additionally, I attended the CISCO Academy course 'CCNA Routing and Switching', which enhanced my knowledge of CISCO devices, their configurations, and basic information about protocols used in computer networks. I graduated from high school with a diploma and participated in the 'Euroelektra' Olympiad, where I achieved the finalist title, facilitating my smooth admission to university. <img src='zsel.png' alt='ZSEL' class='logo_edu'>",
+                skill1: "<b>Network Device Programming</b>",
+                skill2: "<b>Fiber Optic Splicing, OTDR Measurements</b>",
+                skill3: "<b>Programming Languages: Python, C, JavaScript, HTML, CSS, Bash, SQL</b>",
+                skill4: "<b>Familiarity with Windows/Windows Server/Linux Environments</b>",
+                skillstext1: "Thanks to the CCNA Routing and Switching courses, I have become familiar with the configuration of CISCO network devices in both local and wide area networks: routing protocols (RIP, OSPF, EIGRP, static routing), network segmentation (VLAN, router-on-a-stick), tunneling, and local network security (port security, access lists). I am also able to configure TP-LINK devices.",
+                skillstext2: "During my studies at the Electronic Technical School, I became familiar with the procedure of fiber optic splicing, attenuation measurement using the transmission method, and OTDR measurement. <a href='https://github.com/KGora12/CV/blob/main/OTDR.pdf'>Example analysis of reflectograms</a>.",
+                skillstext3: "I can program in the following languages: Python (simple programs, machine learning), C (hardware programming, <a href='https://github.com/KGora12/CV/blob/main/ESP32.pdf'>Example project on the ESP32 platform</a>), JavaScript, HTML, CSS (web development), Bash (script automation), SQL (database management, server database creation, <a href='https://github.com/KGora12/CV/blob/main/BAZY.pdf'>Example database project</a>).",
+                skillstext4: "Managing Windows/Windows Server environments: creating DNS domains and Active Directory, assigning permissions in the Windows system, server management. Familiarity with the Linux environment.",
+                skillsheading: "Skills",
+                contactheading: "Contact",
+                contacttext3: "Webpage: https://kgora12.github.io/my-webpage/"
+            }
+        };
+
+        function showSection(sectionId) {
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+
+        function switchLanguage(lang) {
+            document.getElementById('profile-text').innerHTML = textContent[lang].profile;
+            document.getElementById('email-text').innerHTML = textContent[lang].email;
+            document.getElementById('address-text').innerHTML = textContent[lang].address;
+            document.getElementById('status-text').innerHTML = textContent[lang].status;
+            document.getElementById('about-text').innerHTML = textContent[lang].about;
+            document.getElementById('uni-text').innerHTML = textContent[lang].uni;
+            document.getElementById('uni-field-text').innerHTML = textContent[lang].uniField;
+            document.getElementById('school-text').innerHTML = textContent[lang].school;
+            document.getElementById('school-field-text').innerHTML = textContent[lang].schoolField;
+            document.getElementById('cert-1').innerHTML = textContent[lang].cert1;
+            document.getElementById('cert-2').innerHTML = textContent[lang].cert2;
+            document.getElementById('cert-3').innerHTML = textContent[lang].cert3;
+            document.getElementById('cert-4').innerHTML = textContent[lang].cert4;
+            document.getElementById('cert-5').innerHTML = textContent[lang].cert5;
+            document.getElementById('cert-6').innerHTML = textContent[lang].cert6;
+            document.getElementById('cert-7').innerHTML = textContent[lang].cert7;
+            document.getElementById('skill-1').innerHTML = textContent[lang].skill1;
+            document.getElementById('skill-2').innerHTML = textContent[lang].skill2;
+            document.getElementById('skill-3').innerHTML = textContent[lang].skill3;
+            document.getElementById('skill-4').innerHTML = textContent[lang].skill4;
+            document.getElementById('lang-1').innerHTML = textContent[lang].lang1;
+            document.getElementById('lang-2').innerHTML = textContent[lang].lang2;
+            document.getElementById('lang-3').innerHTML = textContent[lang].lang3;
+            document.getElementById('nav-brand').innerText = textContent[lang].brand;
+            document.getElementById('nav-profile').innerText = textContent[lang].profileNav;
+            document.getElementById('nav-experience').innerText = textContent[lang].experienceNav;
+            document.getElementById('nav-education').innerText = textContent[lang].educationNav;
+            document.getElementById('nav-skills').innerText = textContent[lang].skillsNav;
+            document.getElementById('nav-contact').innerText = textContent[lang].contactNav;
+            document.getElementById('sectioneducation').innerHTML = textContent[lang].sectioneducation;
+            document.getElementById('sectioncert').innerHTML = textContent[lang].sectioncert;
+            document.getElementById('sectionskills').innerHTML = textContent[lang].sectionskills;
+            document.getElementById('sectionlang').innerHTML = textContent[lang].sectionlang;
+
+            document.getElementById('exp1').innerHTML = textContent[lang].exp1;
+            document.getElementById('exp2').innerHTML = textContent[lang].exp2;
+            document.getElementById('exp3').innerHTML = textContent[lang].exp3;
+            document.getElementById('exp1desc').innerText = textContent[lang].exp1desc;
+            document.getElementById('exp2desc').innerText = textContent[lang].exp2desc;
+            document.getElementById('exp3desc').innerText = textContent[lang].exp3desc;
+            document.getElementById('experience-heading').innerText = textContent[lang].experienceheading;
+            document.getElementById('edu1').innerHTML = textContent[lang].edu1;
+            document.getElementById('edu2').innerHTML = textContent[lang].edu2;
+            document.getElementById('edu1desc').innerHTML = textContent[lang].edu1desc;
+            document.getElementById('edu2desc').innerHTML = textContent[lang].edu2desc;
+            document.getElementById('education-heading').innerText = textContent[lang].educationheading;
+            document.getElementById('skills-heading').innerHTML = textContent[lang].skillsheading;
+            document.getElementById('skill1').innerHTML = textContent[lang].skill1;
+            document.getElementById('skill2').innerHTML = textContent[lang].skill2;
+            document.getElementById('skill3').innerHTML = textContent[lang].skill3;
+            document.getElementById('skill4').innerHTML = textContent[lang].skill4;
+            document.getElementById('skills-text1').innerHTML = textContent[lang].skillstext1;
+            document.getElementById('skills-text2').innerHTML = textContent[lang].skillstext2;
+            document.getElementById('skills-text3').innerHTML = textContent[lang].skillstext3;
+            document.getElementById('skills-text4').innerHTML = textContent[lang].skillstext4;
+            document.getElementById('contact-heading').innerHTML = textContent[lang].contactheading;
+            document.getElementById('contact-text3').innerHTML = textContent[lang].contacttext3;
+        }
+    </script>
+</body>
+</html>
